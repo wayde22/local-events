@@ -18,12 +18,12 @@ import javax.validation.Valid;
 public class EventCategoryController {
 
     @Autowired
-    private EventCategoryRepository repo;
+    private EventCategoryRepository eventCategoryRepository;
 
     @GetMapping
     public String displayAllEvents(Model model) {
         model.addAttribute("title", "All Categories");
-        model.addAttribute("eventCategories", repo.findAll());
+        model.addAttribute("eventCategories", eventCategoryRepository.findAll());
         return "eventCategories/index";
     }
 
@@ -43,7 +43,7 @@ public class EventCategoryController {
             return "eventCategories/create";
         }
 
-        repo.save(eventCategory);
+        eventCategoryRepository.save(eventCategory);
 
         return "redirect:";
     }
