@@ -1,8 +1,11 @@
 package com.wadestevens.localevents.models;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -11,11 +14,11 @@ public class EventDetails extends AbstractEntity {
     @Size(max = 500, message = "Description too long!")
     private String description;
 
-    @NotBlank(message = "Email is required!")
-    @Email(message = "Invalid Email! Try again.")
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    public EventDetails(@Size(max = 500, message = "Description too long!") String description, @NotBlank(message = "Email is required!") @Email(message = "Invalid Email! Try again.") String contactEmail) {
+    public EventDetails(@Size(max = 500, message = "Description too long!") String description, @NotBlank(message = "Email is required") @Email(message = "Invalid email. Try again.") String contactEmail) {
         this.description = description;
         this.contactEmail = contactEmail;
     }

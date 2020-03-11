@@ -11,14 +11,15 @@
 <body>
 
 <nav th:fragment="header">
-<!--    Where does the title come from?-->
     <h1 th:text="${title}">Local Events</h1>
-    <ul class="nav">
+    <ul class="nav mb-3">
         <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
         <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
         <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Event</a></li>
         <li class="nav-item"><a class="nav-link" href="/eventCategories">All Categories</a></li>
         <li class="nav-item"><a class="nav-link" href="/eventCategories/create">Create Category</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">All Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/create">Create Tag</a></li>
     </ul>
 </nav>
 

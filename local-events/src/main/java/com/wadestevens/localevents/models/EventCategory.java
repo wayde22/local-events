@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Entity
 public class EventCategory extends AbstractEntity {
 
-    @Size(min = 3, message = "Name must be at least 3 characters long")
+    @Size(min=3, message="Name must be at least 3 characters long")
     private String name;
 
     @OneToMany(mappedBy = "eventCategory")
@@ -22,8 +22,7 @@ public class EventCategory extends AbstractEntity {
         this.name = name;
     }
 
-    public EventCategory() {
-    }
+    public EventCategory() {}
 
     public String getName() {
         return name;
@@ -41,4 +40,5 @@ public class EventCategory extends AbstractEntity {
     public String toString() {
         return name;
     }
+
 }
